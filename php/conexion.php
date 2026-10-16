@@ -1,21 +1,20 @@
 <?php
 function conectaDB() 
 { 
-  	$host = 'localhost'; 
-	$user = 'root';  //nombre de Usuario que proporciona 000webhost
-	$pass = '';
+   $host = 'localhost'; 
+   $user = 'root';
+   $pass = '';
+   $db   = 'gestion_documentos';
 
-   if (!( $link = @mysqli_connect($host,$user,$pass)) )
-   {
-      echo "Error al realizar la conexión a la base de datos.";
-      exit();
+   $link = mysqli_connect($host, $user, $pass, $db);
+
+   if (!$link) {
+       echo json_encode([]);
+       exit();
    }
 
-   if (!mysqli_select_db($link,"gestion_documentos")) //nombre dela BD que proporciona 000webhost
-   { 
-      echo "Error al seleccionar la base de datos."; 
-      exit(); 
-   }    
+   mysqli_set_charset($link, "utf8mb4");
+
    return $link; 
 } 
 ?>

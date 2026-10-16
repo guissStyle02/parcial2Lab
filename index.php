@@ -97,11 +97,11 @@
                     </div>
 
                     <form id="formDocumento" enctype="multipart/form-data">
-                        
+                        <input type="hidden" id="id_documento" name="id_documento">
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="num_oficio">No. de Oficio *</label>
-                                <input type="text" id="num_oficio" name="num_oficio" placeholder="Ej. 0452/2026" required>
+                                <label for="no_oficio">No. de Oficio *</label>
+                                <input type="text" id="no_oficio" name="no_oficio" placeholder="Ej. 0452/2026" required>
                             </div>
                             <div class="form-group">
                                 <label for="fecha">Fecha *</label>
